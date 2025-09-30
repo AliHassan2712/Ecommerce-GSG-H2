@@ -8,8 +8,6 @@ padding: 4px;
 font-size: 14px;
 cursor: pointer;
 outline: none;
-width: 78px;
-height: 24px;
 
 //responsive Design
 @media (max-width: 768px) {
@@ -20,11 +18,11 @@ height: 24px;
 
 
 & option{
-    color: var(--whiteColor);
+  background-color: ${({ theme }) => theme.colors.black};
     border: none;
-    background-color:var(--blackColor) ; 
+    background-color: ${({ theme }) => theme.colors.black};
     &:hover{
-    background-color: var(--blackColor);
+    background-color: ${({ theme }) => theme.colors.black};
     }
 
 

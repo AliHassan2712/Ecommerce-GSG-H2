@@ -17,6 +17,8 @@ justify-content: space-between;
 
     &::placeholder{
         font-size: 12px;
+        color: var(--blackColor);
+        opacity: 0.5;
     }
 }
 

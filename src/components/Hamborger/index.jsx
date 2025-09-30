@@ -1,12 +1,12 @@
 //style
-import { StyleDiv } from "./style";
+import { StyleButton } from "./style";
 
-export const Ham = () => {
+export const Ham = ({ onClick, className, open = false }) => {
   return (
-    <StyleDiv>
-      <div></div>
-      <div></div>
-      <div></div>
-    </StyleDiv>
+    <StyleButton onClick={onClick} className={className} aria-expanded={open}>
+      <div />
+      <div />
+      <div />
+    </StyleButton>
   );
 };
