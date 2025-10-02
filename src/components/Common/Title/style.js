@@ -4,10 +4,9 @@ export const StyleTitle = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  gap: 20px;
-  left: 10px;
+  gap: 0px 20px;
+  left: 30px;
   font-size: ${({ theme }) => theme.typography.fontSizes.md};
-  width: 100px;
   margin-top: 100px;
   font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
   color: ${({ theme }) => theme.colors.secondary};

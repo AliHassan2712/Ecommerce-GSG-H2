@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 //react-icons
 import { BiRightArrow } from "react-icons/bi";
+
 //style
 import { LabelStyle } from "./style";
 

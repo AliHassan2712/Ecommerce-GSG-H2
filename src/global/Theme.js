@@ -4,6 +4,7 @@ export const theme = {
     white: "#FAFAFA",
     secondary: "#DB4444",
     gray: "#7a7979",
+    green: "#00FF66"
   },
   typography: {
     fontFamily: "'Poppins', sans-serif",
@@ -21,3 +22,5 @@ export const theme = {
     },
   },
 };
+
+

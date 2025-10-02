@@ -1,11 +1,12 @@
-import { LineStyled } from "../../components/Common/Line/style";
-import { Title } from "../../components/Common/Title";
-import { SubTitle } from "../../components/Common/SubTitle";
+import { BestSellingSection } from "../../components/BestSellingSection";
+import { BoxCategory } from "../../components/BoxCategory";
+import { CategorySection } from "../../components/CategorySection";
 import { Container } from "../../components/Container";
-import { Aside } from "../../components/Layout/Aside";
 import { Header } from "../../components/Layout/Header";
 import { TopHeader } from "../../components/Layout/TopHeader";
 import { MainSection } from "../../components/MainSection";
+import { OurProductsSection } from "../../components/OurProductsSection";
+import { ProductsSection } from "../../components/ProductsSection";
 
 export const Home = () => {
   return (
@@ -13,7 +14,10 @@ export const Home = () => {
       <TopHeader />
       <Header />
       <MainSection />
-      <Container></Container>
+      <ProductsSection />
+      <CategorySection/>
+      <BestSellingSection/>
+      <OurProductsSection/>
     </>
   );
 };

@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 //styled Components
-const SpanStyle = styled.span`
+export const SpanStyle = styled.span`
   ${(props) =>
     props.TopHeader
       ? `color:var(--whiteColor);
@@ -26,6 +26,15 @@ const SpanStyle = styled.span`
 
 
  ${(props) =>
+    props.card
+      ? `font-size:14px;
+      font-weight: 400;
+      color: black;
+      opacity:0.5;
+      `
+      : ""}
+
+ ${(props) =>
     props.fontSize && props.fontWeight
       ? `font-weight:${+props.fontWeight}
       font-size:${props.fontSize}
@@ -35,7 +44,7 @@ const SpanStyle = styled.span`
       : ""}
 `;
 
-const ParagraphStyle = styled.p`
+export const ParagraphStyle = styled.p`
   ${(props) =>
     props.TopHeader
       ? `color:var(--whiteColor);
@@ -49,7 +58,6 @@ const ParagraphStyle = styled.p`
       `
       : `color:blue`}
 `;
-
 
 export const H1 = ({ children, className, ...props }) => {
   return (
@@ -99,7 +107,14 @@ export const H6 = ({ children, className, ...props }) => {
   );
 };
 
-export const Span = ({ fontWeight, fontSize, TopHeader, children, className, ...props }) => {
+export const Span = ({
+  fontWeight,
+  fontSize,
+  TopHeader,
+  children,
+  className,
+  ...props
+}) => {
   return (
     <SpanStyle
       className={className}

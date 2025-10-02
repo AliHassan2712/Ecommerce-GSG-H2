@@ -1,20 +1,5 @@
-*{
-    margin:  0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root{
-    --blackColor:#000000;
-    --whiteColor:#FAFAFA;
-    --secondaryColor:#DB4444;
-}
-
 
 @font-face {
-    font-family: 'Poppins';
-    src: url("./assets/fonts/Poppins-Regular.ttf");
-}
-body{
-font-family: 'Poppins', sans-serif;
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf");
 }

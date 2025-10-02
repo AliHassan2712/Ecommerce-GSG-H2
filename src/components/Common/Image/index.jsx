@@ -6,8 +6,8 @@ export const Image = ({ src, widthImage, heightImage, alt }) => {
     <ImageStyle
       src={src}
       alt={alt || ''}
-      widthImage={widthImage}
-      heightImage={heightImage}
+      $width={widthImage}
+      $height={heightImage}
     />
   );
 };
