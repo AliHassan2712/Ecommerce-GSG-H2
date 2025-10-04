@@ -1,13 +1,15 @@
+//style
+import { CardsWrapper, CenteredWrapper, HeaderWrapper } from "./style";
 //components
 import { SubTitle } from "../Common/SubTitle";
 import { Title } from "../Common/Title";
-import { ourProducts } from "../../mocks/products";
 import { Card } from "../Card";
 import { Container } from "../Container";
 import { Button } from "../Common/Button/Button";
-import { Line } from "../Common/Line";
 import { NextAndPrevButton } from "../Common/NextAndPrevButton";
-import { CardsWrapper, CenteredWrapper, HeaderWrapper } from "./style";
+
+//mock data
+import { ourProducts } from "../../mocks/products";
 
 export const OurProductsSection = () => {
   return (

@@ -1,19 +1,21 @@
+//style
+import { CardsWrapper, CenteredWrapper, HeaderWrapper } from "./style";
 //components
 import { SubTitle } from "../Common/SubTitle";
 import { Title } from "../Common/Title";
-import { products } from "../../mocks/products";
 import { Card } from "../Card";
 import { Container } from "../Container";
 import { Button } from "../Common/Button/Button";
 import { NextAndPrevButton } from "../Common/NextAndPrevButton";
 import { Line } from "../Common/Line";
-import { CardsWrapper, CenteredWrapper, HeaderWrapper } from "./style";
+//mock data
+import { products } from "../../mocks/products";
 
 
 
 export const ProductsSection = () => {
   return (
-    <div>
+    <div style={{marginTop:"140px"}}>
       <Container>
         <Title>Today's</Title>
 

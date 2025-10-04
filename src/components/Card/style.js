@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SpanStyle } from "../Typography";
 
 export const CardContainer = styled.div`
   width: 270px;
@@ -46,7 +47,7 @@ export const ProductImage = styled.div`
     color: ${props => props.theme.colors.white || "#FFF"};
     width: 100%;
     border: none;
-    font-size: 14px;
+font-size: ${({ theme }) => theme.typography.fontSizes.sm};
     cursor: pointer;
     transition: bottom 0.3s ease;
   }
@@ -57,12 +58,12 @@ export const DiscountBadge = styled.div`
   top: 12px;
   left: 12px;
   padding: 4px 10px;
-  font-size: 12px;
+font-size: ${({ theme }) => theme.typography.fontSizes.xs};
   border-radius: 6px;
   background-color: ${props =>
     props.discount ? props.theme.colors.secondary : props.theme.colors.green};
   color: ${props => props.theme.colors.white};
-  font-weight: 400;
+font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
 `;
 
 export const CardBody = styled.div`
@@ -82,8 +83,8 @@ export const PriceRow = styled.div`
   
   del {
     color: ${props => props.theme.colors.black || "#000"};
-    font-size: 16px;
-    font-weight: 500;
+font-size: ${({ theme }) => theme.typography.fontSizes.md};
+font-weight: ${({ theme }) => theme.typography.fontWeights.medium};
     opacity: 0.5;
   }
 
@@ -91,8 +92,8 @@ export const PriceRow = styled.div`
 
 export const PriceCurrent = styled.div`
   color: ${props => props.theme.colors.secondary || "#111"};
-  font-size: 16px;
-  font-weight: 500;
+font-size: ${({ theme }) => theme.typography.fontSizes.md};
+font-weight: ${({ theme }) => theme.typography.fontWeights.medium};
 `;
 
 export const Rating = styled.div`
@@ -114,5 +115,9 @@ export const PriceAndRatingRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px; /* space between price and stars */
+  gap: 10px; 
 `;
+
+export const Span = styled(SpanStyle)`
+opacity: 0.3;
+`

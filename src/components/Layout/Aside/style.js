@@ -14,7 +14,7 @@ export const StyleAside = styled.aside`
 
 export const StyleDiv = styled.div`
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
     flex-direction: column;
     gap: 16px;
     flex: 1 1 auto; /* take full height of aside */

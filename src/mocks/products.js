@@ -7,9 +7,19 @@ import Table from "../assets/imgs/Table.png"
 import Office from "../assets/imgs/office.png"
 import Stario from "../assets/imgs/Stario.png"
 import Bag from "../assets/imgs/Bag.png"
+import Woman from "../assets/imgs/Woman.jpg";
+import PlayStation from "../assets/imgs/PlayStaion.png";
+import Gucci from "../assets/imgs/Gucci.png";
+import Speaker from "../assets/imgs/Speker.png";
 
+//react icons
 import { CiCamera, CiClock2, CiKeyboard, CiMonitor, CiSpeaker } from "react-icons/ci";   // Smartphone outline
-import { SiCodingame, SiGameandwatch } from "react-icons/si"
+import { SiGameandwatch } from "react-icons/si"
+import { BiBus, BiHeadphone } from "react-icons/bi"
+import { FaMoneyBillAlt } from "react-icons/fa"
+
+
+
 
 
 export const products = [
@@ -23,7 +33,6 @@ export const products = [
     ratingNum: "88"
 
   },
-
 
   {
     discount: "-35%",
@@ -45,7 +54,6 @@ export const products = [
     ratingNum: "75"
   },
 
-
   {
     discount: "-25%",
     imgSrc: Table,
@@ -55,20 +63,6 @@ export const products = [
     rating: "5",
     ratingNum: "99"
   },
-
-
-  {
-    discount: "-25%",
-    imgSrc: Table,
-    prodName: "S-Series Comfort Chair ",
-    prodPrice: "375",
-    ProdPriceAfter: "$400",
-    rating: "5",
-    ratingNum: "99"
-  },
-
-
-
 ]
 
 export const bestSellers = [
@@ -81,7 +75,6 @@ export const bestSellers = [
     ratingNum: "88"
 
   },
-
 
   {
     imgSrc: Stario,
@@ -120,8 +113,6 @@ export const bestSellers = [
     rating: "5",
     ratingNum: "99"
   },
-
-
 
 ]
 
@@ -175,7 +166,6 @@ export const ourProducts = [
 
   },
 
-
   {
     newProd: "new",
     imgSrc: Stario,
@@ -244,8 +234,58 @@ export const ourProducts = [
     ratingNum: "99",
     ellipse: true
   },
-
-
-
-
 ]
+
+
+
+export const service = [
+  {
+    title: "FREE AND FAST DELIVERY",
+    desc: "Free delivery for all orders over $140",
+    icon: BiBus
+  },
+  {
+    title: "24/7 CUSTOMER SERVICE",
+    desc: "Friendly 24/7 customer support",
+    icon: BiHeadphone
+  },
+  {
+    title: "Money Back Guarantee",
+    desc: "we reurn money within 30 days",
+    icon: FaMoneyBillAlt
+  },
+]
+
+
+
+export const featuredData = [
+  {
+    id: 1,
+    title: "PlayStation 5",
+    description: "Black and White version of the PS5 coming out on sale.",
+    image: PlayStation,
+    overlayWidth: "60%",
+    big: true,
+  },
+  {
+    id: 2,
+    title: "Stylish Woman",
+    description: "New collection of women's fashion now available.",
+    image: Woman,
+    overlayWidth: "80%",
+  },
+  {
+    id: 3,
+    title: "Gucci Bag",
+    description: "Exclusive Gucci bags collection just arrived.",
+    image: Gucci,
+    overlayWidth: "80%",
+  },
+  {
+    id: 4,
+    title: "Wireless Speaker",
+    description: "High-quality sound speakers on discount now.",
+    image: Speaker,
+    overlayWidth: "80%",
+  },
+];

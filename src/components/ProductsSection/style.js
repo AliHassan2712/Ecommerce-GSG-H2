@@ -5,13 +5,13 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 24px;
 `;
 
 export const CardsWrapper = styled.div`
   display: flex;
   gap: 0px 30px;
-  margin-top: 20px;
+  margin: 20px 0px 31px 0px;
 `;
 
 export const CenteredWrapper = styled.div`
@@ -19,5 +19,5 @@ export const CenteredWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px 0px;
+  margin: 60px 0px;
 `;

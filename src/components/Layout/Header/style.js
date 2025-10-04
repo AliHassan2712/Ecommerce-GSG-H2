@@ -11,7 +11,7 @@ export const HeaderStyle = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 0 12px;
+  padding: 40px 0 16px 0px;
   position: relative;
   
 
@@ -23,7 +23,7 @@ export const HeaderStyle = styled.header`
   }
 
   & li {
-    margin-left: 25px;
+    margin-left: 60px;
   }
 
   & a {
@@ -65,9 +65,8 @@ export const HeaderStyle = styled.header`
       background: ${({ theme }) => theme.colors.white};
       flex-direction: column;
       gap: 12px;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.08);
+      padding: 16px 0px; 
+      box-shadow: 0 0 6px 2px rgba(27, 27, 27, 0.08);
       z-index: 40;
     }
   }

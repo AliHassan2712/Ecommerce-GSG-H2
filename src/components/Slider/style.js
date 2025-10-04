@@ -7,7 +7,7 @@ export const SliderWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
   position: relative;
-  margin-top: 30px;
+  margin-top: 40px;
   padding: 28px 0;
 
   @media (max-width: 768px) {
@@ -55,7 +55,7 @@ export const SubTitle = styled(Span)`
 export const Title = styled(H2)`
   font-size: ${({ theme }) => theme.typography.fontSizes.xl};
   font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
-  margin: 0;
+  margin-top: 20px;
   max-width: 280px;
 
   @media (max-width: 992px) {
@@ -74,6 +74,7 @@ export const ShopNow = styled(Span)`
   position: relative;
   display: inline-block;
   transition: color 0.3s ease;
+
 
   &::after {
     content: '';

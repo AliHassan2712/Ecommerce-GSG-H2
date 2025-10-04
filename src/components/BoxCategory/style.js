@@ -10,6 +10,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
+padding: 30px;
 gap:  10px;
 transition: all 0.3s;
 cursor: pointer;
@@ -29,9 +30,9 @@ box-shadow: 0 1 blur rgba(0, 0, 0, 0.05);
 `
 
 export const SpanBox = styled(SpanStyle)`
-font-weight: 400;
+font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
 font-style: Regular;
-font-size: 16px;
+font-size: ${({ theme }) => theme.typography.fontSizes.md};
 line-height: 24px;
 letter-spacing: 0%;
 `

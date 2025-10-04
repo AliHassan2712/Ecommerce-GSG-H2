@@ -16,7 +16,7 @@ justify-content: space-between;
     padding-left: 15px;
 
     &::placeholder{
-        font-size: 12px;
+            font-size: ${({ theme }) => theme.typography.fontSizes.xs};
         color: var(--blackColor);
         opacity: 0.5;
     }

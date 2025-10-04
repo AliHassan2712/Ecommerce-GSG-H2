@@ -5,11 +5,12 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin: 20px 0px 60px 0px;
 `;
 
 export const CardsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 0px 30px;
   margin-top: 20px;
 `;

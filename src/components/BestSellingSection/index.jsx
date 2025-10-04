@@ -1,12 +1,15 @@
+//style
+import { CardsWrapper, HeaderWrapper } from "./style";
 //components
 import { SubTitle } from "../Common/SubTitle";
 import { Title } from "../Common/Title";
-import { bestSellers } from "../../mocks/products";
 import { Card } from "../Card";
 import { Container } from "../Container";
 import { Button } from "../Common/Button/Button";
-import { Line } from "../Common/Line";
-import { CardsWrapper, HeaderWrapper } from "./style";
+
+//mock data
+import { bestSellers } from "../../mocks/products";
+import { CategoriesTimer } from "../CategoriesTimer";
 
 export const BestSellingSection = () => {
   return (
@@ -25,7 +28,7 @@ export const BestSellingSection = () => {
           ))}
         </CardsWrapper>
 
-        <Line />
+        <CategoriesTimer />
       </Container>
     </div>
   );

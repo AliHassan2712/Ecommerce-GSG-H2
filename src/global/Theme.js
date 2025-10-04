@@ -4,7 +4,8 @@ export const theme = {
     white: "#FAFAFA",
     secondary: "#DB4444",
     gray: "#7a7979",
-    green: "#00FF66"
+    green: "#00FF66",
+    icon: "rgba(47, 46, 48, 0.3)",
   },
   typography: {
     fontFamily: "'Poppins', sans-serif",
@@ -12,8 +13,10 @@ export const theme = {
       xs: "12px",
       sm: "14px",
       md: "16px",
-      lg: "20px",
+      lg: "18px",
       xl: "48px",
+
+
     },
     fontWeights: {
       regular: 400,

@@ -1,4 +1,4 @@
-import React from 'react'
+//style
 import { EllipseStyle } from './style'
 
 export const Ellipse = () => {

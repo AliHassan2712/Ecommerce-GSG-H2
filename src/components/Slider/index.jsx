@@ -39,7 +39,7 @@ export const Slider = () => {
               <SubTitle>iPhone 14 Series</SubTitle>
             </div>
             <Title>Up to 10% off Voucher</Title>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" ,marginTop:"22px"}}>
               <ShopNow>Shop Now </ShopNow>
             <CgArrowRight></CgArrowRight>
             </div>
@@ -55,7 +55,7 @@ export const Slider = () => {
 
       {/* Dots navigation */}
       <PaginationWrap>
-        <PaginationDots total={4} activeIndex={1} />
+        <PaginationDots total={5} activeIndex={2} />
       </PaginationWrap>
     </SliderWrapper>
   );

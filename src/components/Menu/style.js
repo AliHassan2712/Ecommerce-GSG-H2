@@ -5,14 +5,15 @@ background-color: transparent;
 color: var(--whiteColor);
 border: none;
 padding: 4px;
-font-size: 14px;
+      font-size: ${({ theme }) => theme.typography.fontSizes.sm};
 cursor: pointer;
 outline: none;
+width: 78px;
 
 //responsive Design
 @media (max-width: 768px) {
     width: fit-content;
-    font-size: 12px;
+            font-size: ${({ theme }) => theme.typography.fontSizes.xs};
     
 }
 

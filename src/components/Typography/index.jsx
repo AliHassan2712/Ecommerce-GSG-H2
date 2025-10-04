@@ -2,62 +2,9 @@
 import styled from "styled-components";
 
 //styled Components
-export const SpanStyle = styled.span`
-  ${(props) =>
-    props.TopHeader
-      ? `color:var(--whiteColor);
-      margin-left:10px;
-      font-weight: 700;
-      text-decoration: underline;
+export const SpanStyle = styled.span``;
 
-      //responsive Design
-      @media (max-width: 768px) {
-      font-size:10px;
-      `
-      : ""}
-
-  ${(props) =>
-    props.fontSize
-      ? `font-size:${props.fontSize}
-      font-weight: 400;
-      color:var(--whiteColor)
-      `
-      : ""}
-
-
- ${(props) =>
-    props.card
-      ? `font-size:14px;
-      font-weight: 400;
-      color: black;
-      opacity:0.5;
-      `
-      : ""}
-
- ${(props) =>
-    props.fontSize && props.fontWeight
-      ? `font-weight:${+props.fontWeight}
-      font-size:${props.fontSize}
-      
-      color:var(--whiteColor)
-      `
-      : ""}
-`;
-
-export const ParagraphStyle = styled.p`
-  ${(props) =>
-    props.TopHeader
-      ? `color:var(--whiteColor);
-      text-transform: capitalize;
-
-      font-size: ${props.TopHeader};
-
-      //responsive Design
-      @media (max-width: 768px) {
-      font-size:10px;
-      `
-      : `color:blue`}
-`;
+export const ParagraphStyle = styled.p``;
 
 export const H1 = ({ children, className, ...props }) => {
   return (
@@ -107,27 +54,14 @@ export const H6 = ({ children, className, ...props }) => {
   );
 };
 
-export const Span = ({
-  fontWeight,
-  fontSize,
-  TopHeader,
-  children,
-  className,
-  ...props
-}) => {
+export const Span = ({ children, className, ...props }) => {
   return (
-    <SpanStyle
-      className={className}
-      fontWeight={fontWeight}
-      TopHeader={TopHeader}
-      fontSize={fontSize}
-      {...props}
-    >
+    <SpanStyle className={className} {...props}>
       {children}
     </SpanStyle>
   );
 };
 
-export const Paragraph = ({ TopHeader, children }) => {
-  return <ParagraphStyle TopHeader={TopHeader}>{children}</ParagraphStyle>;
+export const Paragraph = ({ children }) => {
+  return <ParagraphStyle>{children}</ParagraphStyle>;
 };

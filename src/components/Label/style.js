@@ -17,8 +17,8 @@ export const LabelStyle = styled.div`
 
   & a {
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
+font-size: ${({ theme }) => theme.typography.fontSizes.md};
+font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
     color: var(--blackColor, #000);
   }
 

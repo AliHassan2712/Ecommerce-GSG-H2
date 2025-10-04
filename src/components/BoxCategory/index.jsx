@@ -1,3 +1,4 @@
+//style
 import { SpanBox, StyleBox } from "./style";
 
 export const BoxCategory = ({ category, icon: Icon }) => {
