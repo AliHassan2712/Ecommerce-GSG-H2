@@ -1,8 +1,8 @@
-//react
+// Header.jsx
 import { Link } from "react-router-dom";
 import { useState } from "react";
 //style
-import { HeaderStyle, WrapperDiv } from "./style";
+import { HeaderStyle, WrapperDiv, Overlay } from "./style";
 //components
 import { Logo } from "../../Logo";
 import { Container } from "../../Container";
@@ -18,26 +18,26 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
 
   const toggle = () => setOpen((v) => !v);
+
+  const closeMenu = () => setOpen(false);
+
   return (
     <>
       <Container>
         <HeaderStyle>
           <Logo />
-          <ul className={open ? "open" : ""} onClick={() => setOpen(false)}>
+          <ul className={open ? "open" : ""} onClick={closeMenu}>
             <li>
               <Link to={PATH.Home} className="active">
                 Home
               </Link>
             </li>
-
             <li>
               <Link to={PATH.Contact}>Contact</Link>
             </li>
-
             <li>
               <Link to={PATH.About}>About</Link>
             </li>
-
             <li>
               <Link to={PATH.SignUp}>Sign Up</Link>
             </li>
@@ -50,6 +50,10 @@ export const Header = () => {
           <Ham onClick={toggle} open={open} className={open ? "open" : ""} />
         </HeaderStyle>
       </Container>
+
+      {/* Overlay */}
+      {open && <Overlay onClick={closeMenu} />}
+
       <Line />
     </>
   );

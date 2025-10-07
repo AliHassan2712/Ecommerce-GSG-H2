@@ -1,7 +1,7 @@
 
 //assets
 import controller from "../assets/imgs/controller.png"
-import KeyBoard from "../assets/imgs/keyboard.png"
+import KeyBoard from "../assets/imgs/Keyboard.png"
 import Screen from "../assets/imgs/screen.png"
 import Table from "../assets/imgs/Table.png"
 import Office from "../assets/imgs/office.png"
