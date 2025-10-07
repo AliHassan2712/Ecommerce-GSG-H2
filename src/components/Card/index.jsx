@@ -10,6 +10,7 @@ import {
   Rating,
   EllipseWrapper,
   PriceAndRatingRow,
+  SpanCard,
 } from "./style";
 
 //components
@@ -74,7 +75,7 @@ export const Card = ({
               {Array.from({ length: 5 }).map((_, i) =>
                 i < rating ? <StarFilledIcon key={i} /> : <StarIcon key={i} />
               )}
-              <Span card>({ratingNum})</Span>
+              <SpanCard card>({ratingNum})</SpanCard>
             </Rating>
           </PriceAndRatingRow>
         )}

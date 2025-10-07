@@ -1,6 +1,5 @@
 //style
 import { HeaderWrapper } from "./style";
-
 //components
 import { Container } from "../Container";
 import { Featured } from "../Featured";

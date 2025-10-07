@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.typography.fontFamily};
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.black};
+    overflow-x: hidden;
   }
 
   a {

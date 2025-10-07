@@ -1,9 +1,8 @@
 //style
-import { Paragraph, GridWrapper, Card, Overlay, BottomGrid } from "./style";
+import { GridWrapper, Card, Overlay, BottomGrid, RightTopCard, RightTopOverlay } from "./style";
 //components
 import { Image } from "../Common/Image";
-import { H2, Span } from "../Typography";
-
+import { H2, Paragraph, Span } from "../Typography";
 //mock data
 import { featuredData } from "../../mocks/products";
 
@@ -29,29 +28,18 @@ export const Featured = () => {
 
       {/* Right top card */}
       {topRightCards.map((item) => (
-        <Card
-          key={item.id}
-          style={{
-            display: "flex",
-            flexDirection: "row-reverse", // Image on the right
-            alignItems: "center",
-          }}
-        >
+        <RightTopCard key={item.id}>
           <Image
             src={item.image}
-            widthImage="50%" // half of the card for the image
+            widthImage="50%"
             heightImage="200px"
-            style={{ objectFit: "cover" }}
           />
-          <Overlay
-            width="50%" // the other half for text
-            style={{ padding: "0px", textAlign: "left" }}
-          >
+          <RightTopOverlay>
             <H2>{item.title}</H2>
             <Paragraph>{item.description}</Paragraph>
             <Span>Shop Now</Span>
-          </Overlay>
-        </Card>
+          </RightTopOverlay>
+        </RightTopCard>
       ))}
 
       {/* Right bottom cards */}

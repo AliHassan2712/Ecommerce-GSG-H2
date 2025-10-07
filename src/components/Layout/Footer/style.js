@@ -88,7 +88,7 @@ export const SocialIcons = styled.div`
   margin-top: 20px;
 
   a {
-    : 18px;
+    font-size: ${({ theme }) => theme.typography.fontSizes.lg};
     opacity: 0.8;
     transition: 0.3s;
 

@@ -15,7 +15,4 @@ export const Dot = styled.div`
   cursor: pointer;
   transition: transform 0.15s ease, background-color 0.15s ease;
 
-  &:hover {
-    transform: scale(1.05);
-  }
 `;

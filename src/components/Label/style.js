@@ -26,10 +26,4 @@ font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
     width: 7.78px;
     height: 12.73px;
   }
-
-  &:hover a {
-   opacity: 0.3;
-  }
-
-
 `;

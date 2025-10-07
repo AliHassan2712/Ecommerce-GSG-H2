@@ -5,6 +5,10 @@ import styled from "styled-components";
 const ContainerDiv = styled.div`
   width: 80%;
   margin: auto;
+
+  @media (max-width:767px) {
+    width: 90%;
+  }
 `;
 
 export const Container = ({ children }) => {

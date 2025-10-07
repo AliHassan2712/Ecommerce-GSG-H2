@@ -1,15 +1,14 @@
 //style
-import { Span, Wrapper } from "./style";
+import { HStyle, Span, Wrapper } from "./style";
 
 //components
 import { Service } from "../Service";
-import { H3 } from "../Typography";
 
 export const ServiceSection = ({ title, desc, icon }) => {
   return (
     <Wrapper>
       <Service icon={icon} />
-      <H3>{title}</H3>
+      <HStyle>{title}</HStyle>
       <Span>{desc}</Span>
     </Wrapper>
   );

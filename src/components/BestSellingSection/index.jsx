@@ -1,19 +1,19 @@
 //style
-import { CardsWrapper, HeaderWrapper } from "./style";
+import { CardsWrapper, HeaderWrapper, SectionWrapper } from "./style";
 //components
 import { SubTitle } from "../Common/SubTitle";
 import { Title } from "../Common/Title";
 import { Card } from "../Card";
 import { Container } from "../Container";
 import { Button } from "../Common/Button/Button";
+import { CategoriesTimer } from "../CategoriesTimer";
 
 //mock data
 import { bestSellers } from "../../mocks/products";
-import { CategoriesTimer } from "../CategoriesTimer";
 
 export const BestSellingSection = () => {
   return (
-    <div>
+    <SectionWrapper>
       <Container>
         <Title>This Month</Title>
 
@@ -30,6 +30,6 @@ export const BestSellingSection = () => {
 
         <CategoriesTimer />
       </Container>
-    </div>
+    </SectionWrapper>
   );
 };

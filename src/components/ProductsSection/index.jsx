@@ -1,5 +1,5 @@
 //style
-import { CardsWrapper, CenteredWrapper, HeaderWrapper } from "./style";
+import { CardsWrapper, CenteredWrapper, HeaderWrapper, SectionWrapper } from "./style";
 //components
 import { SubTitle } from "../Common/SubTitle";
 import { Title } from "../Common/Title";
@@ -11,11 +11,9 @@ import { Line } from "../Common/Line";
 //mock data
 import { products } from "../../mocks/products";
 
-
-
 export const ProductsSection = () => {
   return (
-    <div style={{marginTop:"140px"}}>
+    <SectionWrapper>
       <Container>
         <Title>Today's</Title>
 
@@ -36,6 +34,6 @@ export const ProductsSection = () => {
 
         <Line />
       </Container>
-    </div>
+    </SectionWrapper>
   );
 };

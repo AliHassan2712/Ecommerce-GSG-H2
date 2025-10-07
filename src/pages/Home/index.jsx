@@ -11,6 +11,7 @@ import { OurProductsSection } from "../../components/OurProductsSection";
 import { ProductsSection } from "../../components/ProductsSection";
 import { ServiceSection } from "../../components/ServiceSection";
 import { service } from "../../mocks/products";
+import { WrapperDiVSer } from "./style";
 
 export const Home = () => {
   return (
@@ -25,18 +26,12 @@ export const Home = () => {
       <FeaturedSection />
 
       <Container>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "40px",
-          }}
+        <WrapperDiVSer
         >
           {service.map((item) => {
             return <ServiceSection {...item} />;
           })}
-        </div>
+        </WrapperDiVSer>
       </Container>
       <Footer/>
     </>

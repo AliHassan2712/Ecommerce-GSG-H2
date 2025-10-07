@@ -33,10 +33,6 @@ export const HeaderStyle = styled.header`
     color: inherit;
     position: relative;
     transition: all 0.3s;
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.gray};
-    }
   }
 
   & a.active::after {
@@ -58,6 +54,7 @@ export const HeaderStyle = styled.header`
     }
     & ul.open {
       display: flex;
+
       position: absolute;
       width: 100%;
       left: 0;
@@ -68,6 +65,12 @@ export const HeaderStyle = styled.header`
       padding: 16px 0px; 
       box-shadow: 0 0 6px 2px rgba(27, 27, 27, 0.08);
       z-index: 40;
+
+      & li{
+        margin: 0;
+      }
     }
+
+    
   }
 `;

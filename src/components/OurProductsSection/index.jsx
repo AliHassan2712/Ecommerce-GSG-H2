@@ -1,5 +1,5 @@
 //style
-import { CardsWrapper, CenteredWrapper, HeaderWrapper } from "./style";
+import { CardsWrapper, CenteredWrapper, HeaderWrapper, SectionWrapper } from "./style";
 //components
 import { SubTitle } from "../Common/SubTitle";
 import { Title } from "../Common/Title";
@@ -13,7 +13,7 @@ import { ourProducts } from "../../mocks/products";
 
 export const OurProductsSection = () => {
   return (
-    <div>
+    <SectionWrapper>
       <Container>
         <Title>Our Products</Title>
 
@@ -31,8 +31,7 @@ export const OurProductsSection = () => {
         <CenteredWrapper>
           <Button>View All Products</Button>
         </CenteredWrapper>
-
       </Container>
-    </div>
+    </SectionWrapper>
   );
 };

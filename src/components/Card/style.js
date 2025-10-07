@@ -118,6 +118,6 @@ export const PriceAndRatingRow = styled.div`
   gap: 10px; 
 `;
 
-export const Span = styled(SpanStyle)`
+export const SpanCard = styled(SpanStyle)`
 opacity: 0.3;
 `

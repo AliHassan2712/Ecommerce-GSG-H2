@@ -1,5 +1,5 @@
 //style
-import { CategoriesWrapper, HeaderWrapper } from "./style";
+import { CategoriesWrapper, HeaderWrapper, SectionWrapper } from "./style";
 //components
 import { SubTitle } from "../Common/SubTitle";
 import { Title } from "../Common/Title";
@@ -12,7 +12,7 @@ import { categories } from "../../mocks/products";
 
 export const CategorySection = () => {
   return (
-    <div>
+    <SectionWrapper>
       <Container>
         <Title>Categories</Title>
 
@@ -29,6 +29,6 @@ export const CategorySection = () => {
 
         <Line />
       </Container>
-    </div>
+    </SectionWrapper>
   );
 };

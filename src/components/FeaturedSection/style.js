@@ -5,5 +5,12 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0px 60px 0px;
+  margin: 20px 0 60px;
+
+  @media (max-width: 576px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
 `;
