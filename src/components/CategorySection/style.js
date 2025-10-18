@@ -33,6 +33,7 @@ export const CategoriesWrapper = styled.div`
   justify-content: space-between;
   margin: 60px 0 70px;
   gap: 30px;
+  text-align: center;
 
   @media (max-width: 992px) {
     flex-wrap: wrap;

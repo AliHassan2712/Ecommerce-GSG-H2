@@ -1,17 +1,19 @@
-// Header.jsx
-import { Link } from "react-router-dom";
+//react
 import { useState } from "react";
+import { Link } from "react-router-dom";
 //style
 import { HeaderStyle, WrapperDiv, Overlay } from "./style";
 //components
 import { Logo } from "../../Logo";
 import { Container } from "../../Container";
 import { SearchBar } from "../../SearchBar";
-import { CartIcon, PersonIcon, WishIcon } from "../../Icons";
+import { CartIcon, WishIcon } from "../../Icons";
 import { Ham } from "../../Hamborger";
 import { Line } from "../../Common/Line";
+import AccountMenu from "../../Menu/MenuAccount";
 
-//routes
+
+//PATH
 import { PATH } from "../../../constant/PATH";
 
 export const Header = () => {
@@ -46,7 +48,7 @@ export const Header = () => {
             <SearchBar />
             <WishIcon />
             <CartIcon />
-            <PersonIcon/>
+            <AccountMenu />
           </WrapperDiv>
           <Ham onClick={toggle} open={open} className={open ? "open" : ""} />
         </HeaderStyle>

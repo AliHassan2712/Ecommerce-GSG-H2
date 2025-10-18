@@ -1,5 +1,6 @@
 //style
 import { CartPriceDiv } from "./style";
+
 //components
 import { Span } from "../../components/Typography";
 

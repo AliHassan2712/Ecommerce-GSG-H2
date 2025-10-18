@@ -1,4 +1,7 @@
-//style
+// react
+import { useNavigate } from "react-router-dom";
+
+// style
 import {
   CardContainer,
   ActionIcons,
@@ -13,36 +16,43 @@ import {
   SpanCard,
 } from "./style";
 
-//components
+// components
 import { Image } from "../Common/Image";
 import { H3, Span } from "../Typography";
 import { Ellipse } from "../Ellipse";
 import { EyeIcon, StarFilledIcon, StarIcon, WishIcon } from "../Icons";
-import { useNavigate } from "react-router-dom";
+
+//PATH
 import { PATH } from "../../constant/PATH";
 
 export const Card = ({
   id,
-  prodName,
-  imgSrc,
-  discount,
-  prodPrice,
-  ProdPriceAfter,
+  title,
+  thumbnail,
+  discountPercentage,
+  price,
   rating,
-  ratingNum,
-  newProd,
+  stock,
   ellipse,
 }) => {
+  
   const navigate = useNavigate();
-
   const addToCart = (e) => {
     e.stopPropagation();
   };
 
+  // Calculate discounted price if discountPercentage is provided
+  const discountedPrice = discountPercentage
+    ? (price * (1 - discountPercentage / 100)).toFixed(2)
+    : null;
+
+    
   return (
     <CardContainer
-      discount={discount}
-      newProd={newProd}
+      discount={
+        discountPercentage ? `${Math.round(discountPercentage)}%` : null
+      }
+      newProd={stock > 50 ? "NEW" : null}
       onClick={() => navigate(`/${PATH.PDP}/${id}`)}
     >
       <ActionIcons>
@@ -51,52 +61,65 @@ export const Card = ({
       </ActionIcons>
 
       <ProductImage>
-        <Image src={imgSrc} alt="product" widthImage="172" heightImage="152" />
-        <button onClick={(e) => addToCart(e)}>Add to cart</button>
+        <Image src={thumbnail} alt={title} widthImage="172" heightImage="152" />
+        <button onClick={addToCart}>Add to cart</button>
       </ProductImage>
 
-      {(discount || newProd) && (
-        <DiscountBadge discount={discount}>{discount || newProd}</DiscountBadge>
+      {(discountPercentage || stock > 50) && (
+        <DiscountBadge
+          discount={
+            discountPercentage ? `${Math.round(discountPercentage)}%` : "NEW"
+          }
+        >
+          {discountPercentage ? `${Math.round(discountPercentage)}%` : "NEW"}
+        </DiscountBadge>
       )}
 
       <CardBody>
-        <H3>{prodName}</H3>
+        <H3>{title}</H3>
 
-        {/* Price & Rating */}
-        {ProdPriceAfter ? (
+        {discountedPrice ? (
           <>
             <PriceRow>
               <PriceCurrent>
-                <Span>${prodPrice}</Span>
+                <Span>${discountedPrice}</Span>
               </PriceCurrent>
-              <Span as="del">{ProdPriceAfter}</Span>
+              <Span as="del">${price}</Span>
             </PriceRow>
 
             <Rating>
               {Array.from({ length: 5 }).map((_, i) =>
-                i < rating ? <StarFilledIcon key={i} /> : <StarIcon key={i} />
+                i < Math.round(rating) ? (
+                  <StarFilledIcon key={i} />
+                ) : (
+                  <StarIcon key={i} />
+                )
               )}
-              <Span card>({ratingNum})</Span>
+              <Span card>({rating})</Span>
             </Rating>
           </>
         ) : (
           <PriceAndRatingRow>
             <PriceCurrent>
-              <Span>${prodPrice}</Span>
+              <Span>${price}</Span>
             </PriceCurrent>
             <Rating>
               {Array.from({ length: 5 }).map((_, i) =>
-                i < rating ? <StarFilledIcon key={i} /> : <StarIcon key={i} />
+                i < Math.round(rating) ? (
+                  <StarFilledIcon key={i} />
+                ) : (
+                  <StarIcon key={i} />
+                )
               )}
-              <SpanCard card>({ratingNum})</SpanCard>
+              <SpanCard card>({rating})</SpanCard>
             </Rating>
           </PriceAndRatingRow>
         )}
 
         {ellipse && (
           <EllipseWrapper>
-            <Ellipse />
-            <Ellipse />
+            <Ellipse color="#DB4444" />
+            <Ellipse color="#CBE4E8" />
           </EllipseWrapper>
         )}
       </CardBody>

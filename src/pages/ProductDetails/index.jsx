@@ -1,4 +1,8 @@
-//style
+//react
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+// style
 import {
   DetailsSection,
   GalleryMain,
@@ -17,7 +21,7 @@ import {
   LineStyleDiv,
 } from "./style";
 
-//components
+// components
 import { Container } from "../../components/Container";
 import { Image } from "../../components/Common/Image";
 import { H2 } from "../../components/Typography";
@@ -29,16 +33,15 @@ import { Size } from "../../components/Size";
 import { Quantity } from "../../components/Quantity";
 import { Button } from "../../components/Common/Button/Button";
 import { Delivery } from "../../components/Delivery";
+import { Loading } from "../../components/Loading";
 
-//react icons
+// react icons
 import { GrDeliver } from "react-icons/gr";
 import { IoReload } from "react-icons/io5";
 
-//assets
-import controller from "../../assets/imgs/controller.png";
 export const ProductDetails = () => {
-  // const {id} = useParams()
-  const rating = 4;
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
   const size = ["xs", "sm", "m", "l", "xl"];
   const delivery = [
     {
@@ -52,43 +55,59 @@ export const ProductDetails = () => {
       icon: IoReload,
     },
   ];
-  const reviewsCount = 150;
+
+
+  //fetch product details
+  useEffect(() => {
+    fetch(`https://dummyjson.com/products/${id}`)
+      .then((res) => res.json())
+      .then(setProduct)
+      .catch((err) => console.error("Failed to load product:", err));
+  }, [id]);
+
+  //loading state if product is null (while fetching)
+  if (!product) return <Loading text="Fetching product details..." />;
 
   return (
     <div>
       <Container>
         <DetailsSection>
           <GallerySmall>
-            {[1, 2, 3, 4].map((i) => (
+            {product.images?.map((img, i) => (
               <SmallImageWrapper key={i}>
-                <Image src={controller} widthImage={121} heightImage={114} />
+                <Image src={img} widthImage={121} heightImage={114} />
               </SmallImageWrapper>
             ))}
           </GallerySmall>
 
           <GalleryMain>
-            <Image src={controller} widthImage={446} heightImage={315} />
+            <Image src={product.thumbnail} widthImage={446} heightImage={315} />
           </GalleryMain>
 
           <InfoWrapper>
-            <H2>Havic HV G-92 Gamepad</H2>
+            <H2>{product.title}</H2>
+
             <Reviews>
               {Array.from({ length: 5 }).map((_, i) =>
-                i < rating ? <StarFilledIcon key={i} /> : <StarIcon key={i} />
+                i < Math.round(product.rating) ? (
+                  <StarFilledIcon key={i} />
+                ) : (
+                  <StarIcon key={i} />
+                )
               )}
               <Span>
-                ({reviewsCount} Reviews) <span>In Stock</span>
+                ({product.rating} Reviews){" "}
+                <span>{product.availabilityStatus}</span>
               </Span>
             </Reviews>
-            <Price>$192.00</Price>
-            <Paragraph>
-              PlayStation 5 Controller Skin High quality vinyl with air channel
-              adhesive for easy bubble free install & mess free removal Pressure
-              sensitive.
-            </Paragraph>
+
+            <Price>${product.price}</Price>
+            <Paragraph>{product.description}</Paragraph>
+
             <LineStyleDiv>
               <Line />
             </LineStyleDiv>
+
             <OptionRow>
               Colours:
               <OptionChoices>
@@ -96,12 +115,12 @@ export const ProductDetails = () => {
                 <Ellipse color="#E07575" />
               </OptionChoices>
             </OptionRow>
+
             <OptionRow>
               Size:
               <OptionChoices>
                 {size.map((item, index) => (
                   <Size key={item} isSelected={index === 2}>
-                    {" "}
                     {item}
                   </Size>
                 ))}
@@ -110,16 +129,16 @@ export const ProductDetails = () => {
 
             <BayNowDiv>
               <Quantity />
-              <Button>Bay Now</Button>
+              <Button>Buy Now</Button>
               <SizeStyle>
                 <WishIcon />
               </SizeStyle>
             </BayNowDiv>
 
             <DeliveryDiv>
-              {delivery.map((item, i) => {
-                return <Delivery key={i} {...item} />;
-              })}
+              {delivery.map((item, i) => (
+                <Delivery key={i} {...item} />
+              ))}
             </DeliveryDiv>
           </InfoWrapper>
         </DetailsSection>
