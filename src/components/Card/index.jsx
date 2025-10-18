@@ -18,8 +18,11 @@ import { Image } from "../Common/Image";
 import { H3, Span } from "../Typography";
 import { Ellipse } from "../Ellipse";
 import { EyeIcon, StarFilledIcon, StarIcon, WishIcon } from "../Icons";
+import { useNavigate } from "react-router-dom";
+import { PATH } from "../../constant/PATH";
 
 export const Card = ({
+  id,
   prodName,
   imgSrc,
   discount,
@@ -30,8 +33,18 @@ export const Card = ({
   newProd,
   ellipse,
 }) => {
+  const navigate = useNavigate();
+
+  const addToCart = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <CardContainer discount={discount} newProd={newProd}>
+    <CardContainer
+      discount={discount}
+      newProd={newProd}
+      onClick={() => navigate(`/${PATH.PDP}/${id}`)}
+    >
       <ActionIcons>
         <EyeIcon />
         <WishIcon />
@@ -39,7 +52,7 @@ export const Card = ({
 
       <ProductImage>
         <Image src={imgSrc} alt="product" widthImage="172" heightImage="152" />
-        <button>Add to cart</button>
+        <button onClick={(e) => addToCart(e)}>Add to cart</button>
       </ProductImage>
 
       {(discount || newProd) && (

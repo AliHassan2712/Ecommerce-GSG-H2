@@ -15,7 +15,7 @@ export const EllipseStyle = styled.div`
     transform: translate(-50%, -50%);
     width: 15px;
     height: 15px;
-    background-color: ${(props) => props.theme.colors.secondary};
+    background-color: ${(props) => props.color};
     border-radius: 50%;
 
   }

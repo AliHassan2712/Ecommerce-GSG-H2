@@ -4,7 +4,7 @@ import { ParagraphStyle, SpanStyle } from "../../Typography";
 export const WrapperDiv = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
-padding: 4px;
+padding: 3px;
 `
 export const FlexDiv = styled.div`
   display: flex;

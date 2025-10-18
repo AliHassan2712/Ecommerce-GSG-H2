@@ -1,4 +1,8 @@
+
 export const PATH ={
     Home : "/",
-    Contact:"contact"
+    Login:"login",
+    Checkout:"checkout",
+    Cart:"cart",
+    PDP:"productDetails"
 }

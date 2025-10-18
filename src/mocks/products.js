@@ -24,6 +24,7 @@ import { FaMoneyBillAlt } from "react-icons/fa"
 
 export const products = [
   {
+    id:1,
     discount: "-40%",
     imgSrc: controller,
     prodName: "HAVIT HV-G92 Gamepad",
@@ -35,6 +36,7 @@ export const products = [
   },
 
   {
+    id:2,
     discount: "-35%",
     imgSrc: KeyBoard,
     prodName: "AK-900 Wired Keyboard",
@@ -45,6 +47,7 @@ export const products = [
   },
 
   {
+    id:3,
     discount: "-30%",
     imgSrc: Screen,
     prodName: "IPS LCD Gaming Monitor",
@@ -55,6 +58,7 @@ export const products = [
   },
 
   {
+    id:4,
     discount: "-25%",
     imgSrc: Table,
     prodName: "S-Series Comfort Chair ",

@@ -2,9 +2,11 @@ export const theme = {
   colors: {
     black: "#000000",
     white: "#FAFAFA",
+    whiteSecondary:" #F5F5F5",
     secondary: "#DB4444",
     gray: "#7a7979",
     green: "#00FF66",
+    bluesky:"#CBE4E8",
     icon: "rgba(47, 46, 48, 0.3)",
   },
   typography: {

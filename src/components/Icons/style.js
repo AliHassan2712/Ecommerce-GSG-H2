@@ -1,6 +1,6 @@
 //react-icons
-import { BsEye } from "react-icons/bs";
-import { HiOutlineSearch, HiOutlineHeart, HiOutlineShoppingCart, HiStar } from "react-icons/hi";
+import { BsEye, BsPerson } from "react-icons/bs";
+import { HiOutlineSearch, HiOutlineHeart, HiOutlineShoppingCart, HiStar  } from "react-icons/hi";
 import styled from "styled-components";
 
 const BaseIcon = `
@@ -16,7 +16,10 @@ const BaseIcon = `
 // Individual styled outline icons
 export const StyledSearch = styled(HiOutlineSearch)`
   ${BaseIcon}
+`;
 
+export const StyledPerson = styled(BsPerson)`
+  ${BaseIcon}
 `;
 
 export const StyledWish = styled(HiOutlineHeart)`

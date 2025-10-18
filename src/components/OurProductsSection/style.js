@@ -33,9 +33,7 @@ export const CardsWrapper = styled.div`
   gap: 30px;
   margin-top: 20px;
 
-  @media (max-width: 992px) {
-    justify-content: center;
-  }
+
 
   @media (max-width: 768px) {
     flex-wrap: nowrap;

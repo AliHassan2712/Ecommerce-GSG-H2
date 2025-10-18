@@ -7,7 +7,7 @@ import { HeaderStyle, WrapperDiv, Overlay } from "./style";
 import { Logo } from "../../Logo";
 import { Container } from "../../Container";
 import { SearchBar } from "../../SearchBar";
-import { CartIcon, WishIcon } from "../../Icons";
+import { CartIcon, PersonIcon, WishIcon } from "../../Icons";
 import { Ham } from "../../Hamborger";
 import { Line } from "../../Common/Line";
 
@@ -46,6 +46,7 @@ export const Header = () => {
             <SearchBar />
             <WishIcon />
             <CartIcon />
+            <PersonIcon/>
           </WrapperDiv>
           <Ham onClick={toggle} open={open} className={open ? "open" : ""} />
         </HeaderStyle>

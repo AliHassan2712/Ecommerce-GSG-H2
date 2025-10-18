@@ -1,9 +1,9 @@
 //style
 import { EllipseStyle } from './style'
 
-export const Ellipse = () => {
+export const Ellipse = ({color}) => {
   return (
-    <EllipseStyle>
+    <EllipseStyle color={color}>
       <span></span>
     </EllipseStyle>
   )
