@@ -1,24 +1,17 @@
 //style
-import {
-  CartItemRow,
-  PriceCell,
-  ProductCell,
-  QuantityCell,
-  SubtotalCell,
-} from "./style";
+import { CartItemRow, PriceCell, QuantityCell, SubtotalCell } from "./style";
+//components
+import { CartInfoProduct } from "../CartInfoProduct";
 
-export const CartRow = () => {
+export const CartRow = ({ product }) => {
   return (
     <CartItemRow>
-      <ProductCell>
-        <img src="path/to/product/image.jpg" alt="Product Name" />
-        <span>Product Name</span>
-      </ProductCell>
-      <PriceCell>$100.00</PriceCell>
+      <CartInfoProduct title={product.title} image={product.thumbnail} />
+      <PriceCell>${product.price.toFixed(2)}</PriceCell>
       <QuantityCell>
-        <input type="number" defaultValue="01" min="1" />
+        <input type="number" defaultValue={product.quantity} min="1" />
       </QuantityCell>
-      <SubtotalCell>$650.00</SubtotalCell>
+      <SubtotalCell>${product.total.toFixed(2)}</SubtotalCell>
     </CartItemRow>
   );
 };

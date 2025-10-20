@@ -35,7 +35,6 @@ export const Card = ({
   stock,
   ellipse,
 }) => {
-  
   const navigate = useNavigate();
   const addToCart = (e) => {
     e.stopPropagation();
@@ -46,7 +45,6 @@ export const Card = ({
     ? (price * (1 - discountPercentage / 100)).toFixed(2)
     : null;
 
-    
   return (
     <CardContainer
       discount={

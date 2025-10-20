@@ -34,6 +34,7 @@ import { Quantity } from "../../components/Quantity";
 import { Button } from "../../components/Common/Button/Button";
 import { Delivery } from "../../components/Delivery";
 import { Loading } from "../../components/Loading";
+import BasicBreadcrumbs from "../../components/Common/Breadcrumbs";
 
 // react icons
 import { GrDeliver } from "react-icons/gr";
@@ -56,7 +57,6 @@ export const ProductDetails = () => {
     },
   ];
 
-
   //fetch product details
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
@@ -71,6 +71,13 @@ export const ProductDetails = () => {
   return (
     <div>
       <Container>
+        <BasicBreadcrumbs
+          pages={[
+            { title: "Account", url: "/" },
+            { title: "Gaming", url: "/" },
+            { title: product.title, url: "/" },
+          ]}
+        />
         <DetailsSection>
           <GallerySmall>
             {product.images?.map((img, i) => (

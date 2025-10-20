@@ -6,6 +6,8 @@ export const SpanStyle = styled.span``;
 
 export const ParagraphStyle = styled.p``;
 
+export const HStyle = styled.h2``;
+
 export const H1 = ({ children, className, ...props }) => {
   return (
     <h1 className={className} {...props}>
@@ -16,9 +18,9 @@ export const H1 = ({ children, className, ...props }) => {
 
 export const H2 = ({ children, className, ...props }) => {
   return (
-    <h2 className={className} {...props}>
+    <HStyle className={className} {...props}>
       {children}
-    </h2>
+    </HStyle>
   );
 };
 
