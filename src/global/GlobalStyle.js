@@ -20,3 +20,18 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 `;
+
+//display flex and just content space between
+export const FlexBetween = {
+  "display": "flex",
+  "align-items": "center",
+  "justify-content": "space-between",
+}
+
+
+//display flex and just content center
+export const FlexCenter = {
+   "display": "flex",
+  "align-items": "center",
+  "justify-content": "center",
+}

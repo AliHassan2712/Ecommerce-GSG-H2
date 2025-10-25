@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
+import {  FlexCenter } from "../../global/GlobalStyle"
+
 // Spinner rotation animation
 const spin = keyframes`
   0% { transform: rotate(0deg); }
@@ -7,10 +9,8 @@ const spin = keyframes`
 `;
 
 export const LoadingWrapper = styled.div`
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${FlexCenter}
   padding: 40px;
   width: 100%;
   height: 100%;
@@ -19,7 +19,7 @@ export const LoadingWrapper = styled.div`
 export const Spinner = styled.div`
   border: 4px solid ${({ theme }) => theme.colors.whiteSecondary};
   border-top: 4px solid ${({ theme }) => theme.colors.secondary};
-  border-radius: 50%;
+  border-radius:  ${({ theme }) => theme.borderRadius.circle};
   width: 48px;
   height: 48px;
   animation: ${spin} 1s linear infinite;

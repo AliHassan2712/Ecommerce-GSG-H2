@@ -5,6 +5,7 @@ import { Title } from "../Common/Title";
 import { Card } from "../Card";
 import { Container } from "../Container";
 import { Loading } from "../Loading";
+import { ErrorFetch } from "../Error";
 
 //mock data
 // import { products } from "../../mocks/products";
@@ -14,19 +15,15 @@ import { useApi } from "../../hooks/useApi";
 
 export const RelatedSection = () => {
   const transformProducts = (data) => data.products;
+const API_URL = import.meta.env.VITE_API_URL;
 
   const {
     data: products,
     loading,
     error,
-  } = useApi("https://dummyjson.com/products?limit=6", transformProducts);
+  } = useApi(`${API_URL}/products?limit=6`, transformProducts);
 
-  if (error)
-    return (
-      <div style={{ textAlign: "center", color: "red" }}>
-        Failed to load products: {error}
-      </div>
-    );
+  if (error) return <ErrorFetch error={error} />;
 
   return (
     <SectionWrapper>

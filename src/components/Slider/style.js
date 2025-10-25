@@ -1,6 +1,7 @@
 // src/components/Slider/style.js
 import styled from "styled-components";
 import { Span, H2 } from "../Typography";
+import { FlexBetween, FlexCenter } from "../../global/GlobalStyle";
 
 export const SliderWrapper = styled.div`
   width: 100%;
@@ -16,9 +17,7 @@ export const SliderWrapper = styled.div`
 `;
 
 export const SliderContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${FlexBetween}
   gap: 40px;
 
   @media (max-width: 768px) {
@@ -105,9 +104,7 @@ export const PaginationWrap = styled.div`
   bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${FlexCenter}
 `;
 
 export const RightImage = styled.div`
@@ -120,7 +117,7 @@ export const RightImage = styled.div`
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+  border-radius: ${({ theme }) => theme.borderRadius.large};
   }
 
   @media (max-width: 768px) {

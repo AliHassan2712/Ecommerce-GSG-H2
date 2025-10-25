@@ -1,12 +1,11 @@
 import styled from "styled-components";
+import {  FlexCenter } from "../../global/GlobalStyle"
 
 export const StyleTimer = styled.div`
 width: 62px;
 height: 62px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
+border-radius:  ${({ theme }) => theme.borderRadius.circle};
+${FlexCenter}
 flex-direction: column;
 
 background-color: ${({ theme }) => theme.colors.white};

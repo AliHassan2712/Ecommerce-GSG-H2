@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FlexBetween } from "../../../global/GlobalStyle"
 
 export const StyledForm = styled.form`
   display: flex;
@@ -14,7 +15,6 @@ export const StyledInput = styled.input`
   border: none;
   outline: none;
   border-bottom: 1px solid black;
-
   width: 100%; 
   max-width: 370px; 
 
@@ -27,9 +27,7 @@ line-height: 24px;
 `;
 
 export const LoginButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${FlexBetween}
   width: 100%;
   margin-top: 40px;
 

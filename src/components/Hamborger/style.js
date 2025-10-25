@@ -7,7 +7,7 @@ export const StyleButton = styled.button`
   padding: 8px;
   width: 48px;
   height: 48px;
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.borderRadius.large};
   cursor: pointer;
   align-items: center;
   justify-content: center;

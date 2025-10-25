@@ -15,6 +15,7 @@ import { Button } from "../Common/Button/Button";
 import { NextAndPrevButton } from "../Common/NextAndPrevButton";
 import { Line } from "../Common/Line";
 import { Loading } from "../Loading";
+import { ErrorFetch } from "../Error";
 
 // hooks
 import { useApi } from "../../hooks/useApi";
@@ -22,17 +23,17 @@ import { useApi } from "../../hooks/useApi";
 
 export const ProductsSection = () => {
   const transformProducts = (data) => data.products;
+  const API_URL = import.meta.env.VITE_API_URL;
+
 
   const { data: products, loading, error } = useApi(
-    "https://dummyjson.com/products?limit=6",
+    `${API_URL}/products?limit=6`,
     transformProducts
   );
 
   if (error)
     return (
-      <div style={{ textAlign: "center", color: "red" }}>
-        Failed to load products: {error}
-      </div>
+     <ErrorFetch error={error}/>
     );
 
   return (

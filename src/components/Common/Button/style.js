@@ -1,12 +1,11 @@
 import styled from "styled-components";
+import {FlexCenter} from "../../../global/GlobalStyle"
 
 export const CircleButtonStyled = styled.button`
 width: 46px;
 height: 46px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
+border-radius:  ${({ theme }) => theme.borderRadius.circle};
+${FlexCenter}
 border: none;
 cursor: pointer;
 `
@@ -19,6 +18,6 @@ padding: 16px 48px;
 color: ${({ theme }) => theme.colors.white};
 border: none;
 outline: none;
-border-radius: 4px;
+border-radius:  ${({ theme }) => theme.borderRadius.small};
 cursor: pointer;
 `

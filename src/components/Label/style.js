@@ -1,11 +1,10 @@
 import styled from "styled-components";
+import { FlexBetween } from "../../global/GlobalStyle"
 
 export const LabelStyle = styled.div`
   width: 217px;
   height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${FlexBetween}
   cursor: pointer;
 
     @media (max-width: 971px) {

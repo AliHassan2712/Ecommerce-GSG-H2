@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ButtonStyled } from "../../components/Common/Button/style"; // Assuming this is your base button style
+import { FlexBetween, FlexCenter } from "../../global/GlobalStyle"
 
 
 export const CartContainer = styled.div`
@@ -16,9 +17,7 @@ export const CartTable = styled.div`
 `;
 
 export const Row = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${FlexBetween}
   padding: 24px 40px;
 
 
@@ -73,7 +72,7 @@ export const ProductCell = styled.div`
     height: 50px;
     object-fit: contain;
     background-color: #f5f5f5;
-    border-radius: 50%;
+    border-radius:  ${({ theme }) => theme.borderRadius.circle};
   }
 
   @media (max-width: 768px) {
@@ -102,7 +101,7 @@ export const QuantityCell = styled.div`
     height: 40px;
     padding: 0 8px;
     border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
+    border-radius:  ${({ theme }) => theme.borderRadius.small};
     text-align: center;
     &::-webkit-inner-spin-button, 
     &::-webkit-outer-spin-button { 
@@ -166,7 +165,7 @@ export const CheckoutSummaryWrapper = styled.div`
 
 export const CartTotalBox = styled.div`
     border: 2px solid rgba(0, 0, 0, 1);
-    border-radius: 4px;
+    border-radius:  ${({ theme }) => theme.borderRadius.small};
     padding: 32px 24px;
     min-width: 470px;    
 
@@ -188,8 +187,6 @@ export const PriceDetailsWrapper = styled.div`
 
 export const CheckoutButtonWrapper = styled.div`
     margin-top: 32px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   ${FlexCenter}
   
 `;

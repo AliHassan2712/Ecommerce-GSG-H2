@@ -14,10 +14,12 @@ import {
   Person3,
   Star,
 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -27,6 +29,10 @@ export default function AccountMenu() {
     setAnchorEl(null);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("userId");
+    navigate("/login");
+  };
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -103,7 +109,7 @@ export default function AccountMenu() {
           </ListItemIcon>
           My Reviews
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

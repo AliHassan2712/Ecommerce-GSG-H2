@@ -2,11 +2,11 @@ export const theme = {
   colors: {
     black: "#000000",
     white: "#FAFAFA",
-    whiteSecondary:" #F5F5F5",
+    whiteSecondary: " #F5F5F5",
     secondary: "#DB4444",
     gray: "#7a7979",
     green: "#00FF66",
-    bluesky:"#CBE4E8",
+    bluesky: "#CBE4E8",
     icon: "rgba(47, 46, 48, 0.3)",
   },
   typography: {
@@ -26,6 +26,12 @@ export const theme = {
       bold: 600,
     },
   },
+  borderRadius: {
+    small: "4px",
+    medium: "6px",
+    large: "8px",
+    circle: "50%"
+  }
 };
 
 

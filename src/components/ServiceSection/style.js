@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { H3, SpanStyle } from "../Typography";
+import { FlexCenter } from "../../global/GlobalStyle"
 
 export const Wrapper = styled.div`
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  ${FlexCenter}
   gap: 10px;
 
 `;

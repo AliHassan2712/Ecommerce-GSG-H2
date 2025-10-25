@@ -4,7 +4,7 @@ export const EllipseStyle = styled.div`
   width: 20px;
   height: 20px;
   border: 1px solid ${(props) => props.theme.colors.black};
-  border-radius: 50%;
+  border-radius:  ${({ theme }) => theme.borderRadius.circle};
   padding: 2px;
   position: relative;
 
@@ -16,7 +16,7 @@ export const EllipseStyle = styled.div`
     width: 15px;
     height: 15px;
     background-color: ${(props) => props.color};
-    border-radius: 50%;
+    border-radius:  ${({ theme }) => theme.borderRadius.circle};
 
   }
 `;

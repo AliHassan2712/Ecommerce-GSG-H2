@@ -9,6 +9,7 @@ import { Container } from "../Container";
 import { Button } from "../Common/Button/Button";
 import { CategoriesTimer } from "../CategoriesTimer";
 import { Loading } from "../Loading";
+import { ErrorFetch } from "../Error";
 
 //mock data
 // import { bestSellers } from "../../mocks/products";
@@ -16,20 +17,19 @@ import { Loading } from "../Loading";
 //hooks
 import { useApi } from "../../hooks/useApi";
 
+
+
 export const BestSellingSection = () => {
   const transformProducts = (data) => data.products;
+  const API_URL = import.meta.env.VITE_API_URL;
+  
   const {
     data: products,
     loading,
     error,
-  } = useApi("https://dummyjson.com/products?limit=8", transformProducts);
+  } = useApi(`${API_URL}/products?limit=8`, transformProducts);
 
-  if (error)
-    return (
-      <div style={{ textAlign: "center", color: "red" }}>
-        Failed to load products: {error}
-      </div>
-    );
+  if (error) return <ErrorFetch error={error} />;
 
   return (
     <SectionWrapper>
@@ -46,7 +46,7 @@ export const BestSellingSection = () => {
             <Loading />
           ) : (
             products
-              .slice(0, 4)
+              .slice(4, 8)
               .map((prod) => <Card key={prod.prodName} {...prod} />)
           )}
         </CardsWrapper>

@@ -1,13 +1,12 @@
 import styled from "styled-components";
+import { FlexBetween } from "../../global/GlobalStyle"
 
 export const StyleDiv = styled.div`
 width: 243px;
 height: 38px;
 background: #F5F5F5;
 padding: 5px;
-display: flex;
-align-items: center;
-justify-content: space-between;
+${FlexBetween}
 
 & input{
     background-color: transparent;

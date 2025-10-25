@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {FlexBetween, FlexCenter} from "../../global/GlobalStyle"
 
 export const SectionWrapper = styled.div`
   margin-top: 140px;
@@ -13,10 +14,8 @@ export const SectionWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.div`
-  display: flex;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
+  ${FlexBetween}
   margin-top: 24px;
 
   @media (max-width: 576px) {
@@ -60,9 +59,7 @@ export const CardsWrapper = styled.div`
 
 export const CenteredWrapper = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${FlexCenter}
   margin: 60px 0;
 
   @media (max-width: 768px) {

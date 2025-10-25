@@ -22,7 +22,7 @@ export const GridWrapper = styled.div`
 export const Card = styled.div`
   position: relative;
   background-color: black;
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.borderRadius.large};
   overflow: hidden;
 
   ${({ big }) =>

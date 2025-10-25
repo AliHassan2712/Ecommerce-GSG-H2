@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SpanStyle } from "../Typography";
+import {FlexCenter} from "../../global/GlobalStyle"
 
 export const CardContainer = styled.div`
   width: 270px;
@@ -31,9 +32,7 @@ export const ActionIcons = styled.div`
 `;
 
 export const ProductImage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${FlexCenter}
   padding-top: 18px;
   width: 100%;
   background-color: ${props => props.theme.colors.lightGray || "#F5F5F5"};
@@ -60,7 +59,7 @@ export const DiscountBadge = styled.div`
   left: 12px;
   padding: 4px 10px;
 font-size: ${({ theme }) => theme.typography.fontSizes.xs};
-  border-radius: 6px;
+  border-radius:${({ theme }) => theme.borderRadius.medium};
   background-color: ${props =>
     props.discount ? props.theme.colors.secondary : props.theme.colors.green};
   color: ${props => props.theme.colors.white};

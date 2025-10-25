@@ -1,8 +1,11 @@
+//style
+import { H2, WrapperDiv } from "./style";
+
+//components
 import BasicBreadcrumbs from "../../../components/Common/Breadcrumbs";
 import { Container } from "../../../components/Container";
 import { FormCheckout } from "../../components/FormCheckout";
 import { Payment } from "../../components/Payment";
-import { H2, WrapperDiv } from "./style";
 
 export const Checkout = () => {
   return (

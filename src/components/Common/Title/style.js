@@ -17,7 +17,7 @@ export const StyleTitle = styled.div`
     width: 20px;
     height: 40px;
     background-color: ${({ theme }) => theme.colors.secondary};
-    border-radius: 4px;
+    border-radius:  ${({ theme }) => theme.borderRadius.small};
     left: -30px;
   }
 `;

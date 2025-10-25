@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import { H2, SpanStyle } from "../Typography";
 import { ButtonStyled } from "../Common/Button/style";
-
+import { FlexBetween, FlexCenter } from "../../global/GlobalStyle"
 export const StyledDiv = styled.div`
   background-color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${FlexBetween}
   padding: 80px 40px;
   gap: 40px;
   flex-wrap: wrap;
@@ -38,9 +36,7 @@ export const LeftWrapper = styled.div`
 `;
 
 export const RightWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${FlexCenter}
   flex: 1;
   min-width: 300px;
 

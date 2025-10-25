@@ -1,15 +1,23 @@
+//react
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+//Yup validation
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
-import { useApi } from "../../../hooks/useApi";
+//style
 import { LoginButton, StyledForm, StyledInput } from "./style";
+
+//components
 import { Button } from "../../../components/Common/Button/Button";
-import { useNavigate } from "react-router-dom";
+
+//hooks
+import { useApi } from "../../../hooks/useApi";
 
 export const FormLogin = () => {
-  // ✅ Yup validation schema
+  //  Yup validation schema
   const loginSchema = Yup.object().shape({
     username: Yup.string().required("Username is required"),
     password: Yup.string().required("Password is required"),
@@ -37,16 +45,15 @@ export const FormLogin = () => {
       });
 
       if (error) {
-        console.error("❌ Login failed:", error);
         setApiError(
           typeof error === "string" ? error : "Login failed. Please try again."
         );
       } else {
-        console.log("✅ Login successful:", data);
+        localStorage.setItem("userId", data.id);
         navigate("/");
       }
     } catch (err) {
-      console.error("🔥 Error during login request:", err);
+      console.error(" Error during login request:", err);
       setApiError("An unexpected error occurred. Please try again.");
     }
   };

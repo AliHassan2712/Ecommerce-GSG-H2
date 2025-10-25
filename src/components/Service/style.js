@@ -1,14 +1,13 @@
 import styled from "styled-components";
+import { FlexCenter } from "../../global/GlobalStyle"
 
 export const StyleDivSer = styled.div`
 background: gray;
 width: 60px;
 height: 60px;
-border-radius: 50%;
+border-radius:  ${({ theme }) => theme.borderRadius.circle};
 padding: 5px;
-display: flex;
-justify-content: center;
-align-items: center;
+${FlexCenter}
 background-color: ${({theme})=>theme.colors.icon};
 
 

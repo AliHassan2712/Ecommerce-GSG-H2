@@ -1,11 +1,10 @@
 import styled from "styled-components";
+import {  FlexCenter } from "../../global/GlobalStyle"
 
 export const OperationDiv = styled.div`
   width: 40px;
   height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${FlexCenter}
 font-weight: ${({ theme }) => theme.typography.fontWeights.medium};
   cursor: pointer;
 

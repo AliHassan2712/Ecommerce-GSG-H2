@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ParagraphStyle, SpanStyle } from "../../components/Typography";
 import { StyledDiv } from "../../components/Size/style";
+import { FlexBetween, FlexCenter } from "../../global/GlobalStyle"
 
 
 export const DetailsSection = styled.div`
@@ -20,7 +21,7 @@ export const GallerySmall = styled.div`
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  border-radius: 4px;
+  border-radius:  ${({ theme }) => theme.borderRadius.small};
 
   @media (max-width: 992px) {
     flex-direction: row; 
@@ -32,7 +33,7 @@ export const GallerySmall = styled.div`
 export const SmallImageWrapper = styled.div`
   background: ${({ theme }) => theme.colors.whiteSecondary};
   padding: 10px;
-  border-radius: 4px;
+  border-radius:  ${({ theme }) => theme.borderRadius.small};
   cursor: pointer;
   width: 170px;
   height: 138px;
@@ -42,10 +43,8 @@ export const GalleryMain = styled.div`
   width: 500px;
   height: 600px;
   background-color: ${({ theme }) => theme.colors.whiteSecondary};
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: ${({ theme }) => theme.borderRadius.small};
+  ${FlexCenter}
   margin: 0px 70px 0px 30px;
 
   @media (max-width: 1200px) {
@@ -131,10 +130,8 @@ export const OptionChoices = styled.div`
 `;
 
 export const BayNowDiv = styled.div`
-display: flex;
-align-items: center;
+${FlexBetween}
 margin-top: 24px;
-justify-content: space-between;
 `
 
 export const SizeStyle = styled(StyledDiv)`

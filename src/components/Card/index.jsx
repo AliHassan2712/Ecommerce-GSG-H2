@@ -1,7 +1,7 @@
-// react
+//react
 import { useNavigate } from "react-router-dom";
 
-// style
+//style
 import {
   CardContainer,
   ActionIcons,
@@ -16,7 +16,7 @@ import {
   SpanCard,
 } from "./style";
 
-// components
+//components
 import { Image } from "../Common/Image";
 import { H3, Span } from "../Typography";
 import { Ellipse } from "../Ellipse";
@@ -24,6 +24,9 @@ import { EyeIcon, StarFilledIcon, StarIcon, WishIcon } from "../Icons";
 
 //PATH
 import { PATH } from "../../constant/PATH";
+
+//hooks
+import { useApi } from "../../hooks/useApi";
 
 export const Card = ({
   id,
@@ -35,12 +38,42 @@ export const Card = ({
   stock,
   ellipse,
 }) => {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const navigate = useNavigate();
-  const addToCart = (e) => {
+
+  const { post, loading } = useApi();
+
+  const addToCart = async (e) => {
     e.stopPropagation();
+
+    // get userId from localStorage
+    const userId = JSON.parse(localStorage.getItem("userId"));
+    if (!userId) {
+      alert("User not logged in!");
+      return;
+    }
+
+    const body = {
+      userId: userId,
+      products: [
+        {
+          id: id,
+          quantity: 1,
+        },
+      ],
+    };
+
+    const { data, error } = await post(`${API_URL}/carts/add`, body);
+
+    if (error) {
+      console.error("Failed to add to cart:", error);
+    } else {
+      console.log("Added to cart:", data);
+      navigate("/cart");
+    }
   };
 
-  // Calculate discounted price if discountPercentage is provided
   const discountedPrice = discountPercentage
     ? (price * (1 - discountPercentage / 100)).toFixed(2)
     : null;
@@ -60,7 +93,9 @@ export const Card = ({
 
       <ProductImage>
         <Image src={thumbnail} alt={title} widthImage="172" heightImage="152" />
-        <button onClick={addToCart}>Add to cart</button>
+        <button onClick={addToCart} disabled={loading}>
+          {loading ? "Adding..." : "Add to cart"}
+        </button>
       </ProductImage>
 
       {(discountPercentage || stock > 50) && (

@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { FlexBetween } from "../../../global/GlobalStyle";
 
 export const StyleAside = styled.aside`
-    /* Make aside take full height of its parent (MainSection) so we can distribute items */
     height: 100%;
     display: flex;
     align-items: stretch;
@@ -13,10 +13,9 @@ export const StyleAside = styled.aside`
 `
 
 export const StyleDiv = styled.div`
-    display: flex;
+    ${FlexBetween}
     margin-top: 40px;
     flex-direction: column;
     gap: 16px;
-    flex: 1 1 auto; /* take full height of aside */
-    justify-content: space-between; /* distribute items across the height */
+    flex: 1 1 auto; 
 `

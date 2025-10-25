@@ -7,11 +7,10 @@ import { HeaderStyle, WrapperDiv, Overlay } from "./style";
 import { Logo } from "../../Logo";
 import { Container } from "../../Container";
 import { SearchBar } from "../../SearchBar";
-import { CartIcon, WishIcon } from "../../Icons";
+import { CartIcon, PersonIcon, WishIcon } from "../../Icons";
 import { Ham } from "../../Hamborger";
 import { Line } from "../../Common/Line";
 import AccountMenu from "../../Menu/MenuAccount";
-
 
 //PATH
 import { PATH } from "../../../constant/PATH";
@@ -23,6 +22,8 @@ export const Header = () => {
 
   const closeMenu = () => setOpen(false);
 
+  const userId = localStorage.getItem("userId");
+
   return (
     <>
       <Container>
@@ -30,9 +31,7 @@ export const Header = () => {
           <Logo />
           <ul className={open ? "open" : ""} onClick={closeMenu}>
             <li>
-              <Link to={PATH.Home} className="active">
-                Home
-              </Link>
+              <Link to={PATH.Home}>Home</Link>
             </li>
             <li>
               <Link to={PATH.Contact}>Contact</Link>
@@ -48,7 +47,8 @@ export const Header = () => {
             <SearchBar />
             <WishIcon />
             <CartIcon />
-            <AccountMenu />
+
+            {userId ? <AccountMenu /> : <PersonIcon />}
           </WrapperDiv>
           <Ham onClick={toggle} open={open} className={open ? "open" : ""} />
         </HeaderStyle>
@@ -56,7 +56,6 @@ export const Header = () => {
 
       {/* Overlay */}
       {open && <Overlay onClick={closeMenu} />}
-
       <Line />
     </>
   );

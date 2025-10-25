@@ -1,70 +1,41 @@
-import { CartInfoProduct } from "../../../components/CartInfoProduct";
-import { CartPrice } from "../../../components/CartPrice";
-import { CouponGroup } from "../../../components/CouponGroup";
-import { Button } from "../../../components/Common/Button/Button";
-import { Image } from "../../../components/Common/Image";
-import { Span } from "../../../components/Typography";
-
-import VisaCard from "../../../assets/imgs/VisaCard.png";
-
+//style
 import {
   PaymentWrapper,
   ProductList,
   ProductItem,
   PriceDetailsWrapper,
-  PaymentOption,
-  PaymentOptionLabel,
-  VisaImageGroup,
   OrderButtonWrapper,
+  StyleDiv,
 } from "./style";
+
+//components
+import { CartInfoProduct } from "../../../components/CartInfoProduct";
+import { CartPrice } from "../../../components/CartPrice";
+import { CouponGroup } from "../../../components/CouponGroup";
+import { Button } from "../../../components/Common/Button/Button";
+import { Span } from "../../../components/Typography";
+import { PaymentOpt } from "../PaymentOption";
 
 export const Payment = () => {
   return (
     <PaymentWrapper>
-      <ProductList>
-        <ProductItem>
-          <CartInfoProduct />
-          <Span>$100</Span>
-        </ProductItem>
-        <ProductItem>
-          <CartInfoProduct />
-          <Span>$100</Span>
-        </ProductItem>
+      <StyleDiv>
+        <ProductList>
+          <ProductItem>
+            <CartInfoProduct title="" />
+            <Span>$100</Span>
+          </ProductItem>
 
-        <PriceDetailsWrapper>
-          <CartPrice title="Subtotal" price="$250.00" />
-          <CartPrice title="Shipping" price="Free" />
-          <CartPrice title="Total" price="$250.00" />
-        </PriceDetailsWrapper>
+          <PriceDetailsWrapper>
+            <CartPrice title="Subtotal" price="$250.00" />
+            <CartPrice title="Shipping" price="Free" />
+            <CartPrice title="Total" price="$250.00" />
+          </PriceDetailsWrapper>
 
-        {/* Payment Options */}
-        <PaymentOption>
-          <div>
-            <input type="radio" name="payment" id="bank" />
-            <PaymentOptionLabel htmlFor="bank">Bank</PaymentOptionLabel>
-          </div>
-          <VisaImageGroup>
-            {[1, 2, 3, 4].map((i) => (
-              <Image
-                key={i}
-                src={VisaCard}
-                alt="Visa Card"
-                widthImage="30px"
-                heightImage="20px"
-              />
-            ))}
-          </VisaImageGroup>
-        </PaymentOption>
-
-        <PaymentOption>
-          <div>
-            <input type="radio" name="payment" id="cod" />
-            <PaymentOptionLabel htmlFor="cod">
-              Cash on Delivery
-            </PaymentOptionLabel>
-          </div>
-        </PaymentOption>
-      </ProductList>
+          {/* Payment Options */}
+          <PaymentOpt />
+        </ProductList>
+      </StyleDiv>
 
       <CouponGroup />
 

@@ -19,21 +19,24 @@ import { H3 } from "../../components/Typography";
 import { CartRow } from "../../components/CartRow";
 import { CouponGroup } from "../../components/CouponGroup";
 import BasicBreadcrumbs from "../../components/Common/Breadcrumbs";
+import { ErrorFetch } from "../../components/Error";
+import { Loading } from "../../components/Loading";
 
 //hooks
 import { useApi } from "../../hooks/useApi";
 export const Cart = () => {
   const Header = ["Product", "Price", "Quantity", "Subtotal"];
+  const userId = localStorage.getItem("userId");
 
   // Fetch user cart data
   const { data, loading, error } = useApi(
-    "https://dummyjson.com/carts/user/33",
+    `https://dummyjson.com/carts/user/${userId}`,
     (json) => json.carts
   );
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (!data?.length) return <p>No carts found.</p>;
+  if (loading) return <Loading />;
+  if (error) return <ErrorFetch error={error} />;
+  if (!data?.length) return <ErrorFetch error="No carts found" />;
 
   const cart = data[0];
   const { products, total, discountedTotal } = cart;

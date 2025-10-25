@@ -7,6 +7,7 @@ export const ProductCell = styled.div`
   flex: 1 1 25%;
   text-align: left !important;
 
+
   & img {
     width: 54px;
     height: 54px;

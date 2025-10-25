@@ -1,4 +1,7 @@
+//react
 import { useForm } from "react-hook-form";
+
+//style
 import {
   InputStyles,
   LabelStyles,
@@ -6,6 +9,7 @@ import {
   CheckboxContainer,
   CheckboxInput,
 } from "./style";
+
 
 export const FormCheckout = () => {
   const {

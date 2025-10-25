@@ -14,15 +14,13 @@ export const FooterRow = styled.div`
   gap: 40px;
   a {
     display: block;
-font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
-font-size: ${({ theme }) => theme.typography.fontSizes.md};
+    font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
+    font-size: ${({ theme }) => theme.typography.fontSizes.md};
     line-height: 24px;
     letter-spacing: 0;
     color: white;
     margin-bottom: 8px;
     transition: 0.3s;
-
- 
   }
 
   @media (max-width: 1024px) {
@@ -57,7 +55,7 @@ export const InputWrapper = styled.div`
     width: 100%;
     height: 40px;
     padding: 0 45px 0 12px;
-    border-radius: 6px;
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
     border: 1px solid white;
     background-color: transparent;
     color: white;
@@ -103,7 +101,7 @@ export const AppWrapper = styled.div`
   margin-top: 10px;
 
   .qr img {
-    border-radius: 8px;
+  border-radius: ${({ theme }) => theme.borderRadius.large};
     width: 90px;
     height: 90px;
     object-fit: cover;
@@ -132,7 +130,7 @@ export const AppLinks = styled.div`
       width: 110px;
       height: 40px;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: ${({ theme }) => theme.borderRadius.medium};
       transition: transform 0.2s;
 
 

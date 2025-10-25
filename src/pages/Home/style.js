@@ -1,16 +1,13 @@
 import styled from "styled-components";
+import { FlexCenter } from "../../global/GlobalStyle"
 
 export const WrapperDiVSer = styled.div`
- display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            margin: 140px 0px ;
+${FlexCenter}
 
-
-            @media (max-width: 767px) {
-                flex-direction: column;
-                
-            }
+gap: 40px;
+margin: 140px 0px ;
+@media (max-width: 767px) {
+    flex-direction: column;
+    }
 
 `

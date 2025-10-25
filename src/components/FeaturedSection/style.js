@@ -1,10 +1,9 @@
 import styled from "styled-components";
+import { FlexBetween } from "../../global/GlobalStyle"
 
 export const HeaderWrapper = styled.div`
-  display: flex;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
+  ${FlexBetween}
   margin: 20px 0 60px;
 
   @media (max-width: 576px) {

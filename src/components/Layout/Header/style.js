@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FlexBetween } from "../../../global/GlobalStyle";
 
 export const WrapperDiv = styled.div`
   display: flex;
@@ -7,9 +8,7 @@ export const WrapperDiv = styled.div`
 `;
 
 export const HeaderStyle = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${FlexBetween}
   padding: 40px 0 16px 0;
   position: relative;
 

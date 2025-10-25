@@ -8,7 +8,7 @@ export const CouponGroupStyle = styled.div`
     & input {
         padding: 16px 24px;
         border: 1px solid rgba(0, 0, 0, 0.5);
-        border-radius: 4px;
+        border-radius:  ${({ theme }) => theme.borderRadius.small};
         min-width: 300px;
         
         @media (max-width: 576px) {
@@ -18,7 +18,6 @@ export const CouponGroupStyle = styled.div`
 
     & ${ButtonStyled} {
         padding: 16px 48px;
-        font-size: 16px;
         
         @media (max-width: 576px) {
             padding: 12px 24px;

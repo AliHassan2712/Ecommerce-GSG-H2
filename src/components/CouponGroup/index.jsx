@@ -1,5 +1,8 @@
-import { Button } from "../Common/Button/Button";
+
+//style
 import { CouponGroupStyle } from "./style";
+//components
+import { Button } from "../Common/Button/Button";
 
 export const CouponGroup = () => {
   return (
